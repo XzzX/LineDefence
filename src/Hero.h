@@ -6,21 +6,23 @@
 
 struct Hero
 {
-    Hero(const YAML::Node& yaml)
-    {
-        if (yaml["id"]) id = yaml["id"].as<std::string>();
-        if (yaml["cost"]) cost = yaml["cost"].as<int64_t>();
-        if (yaml["hp"]) hp = yaml["hp"].as<int64_t>();
-        if (yaml["damage"]) damage = yaml["damage"].as<int64_t>();
-        if (yaml["armor"]) armor = yaml["armor"].as<int64_t>();
-    }
-
     std::string id = "ERROR";
     int64_t cost = std::numeric_limits<int64_t>::max();
     int64_t hp = 0;
     int64_t damage = 0;
     int64_t armor = 0;
 };
+
+Hero create_hero(const YAML::Node& yaml)
+{
+    Hero h;
+    if (yaml["id"]) h.id = yaml["id"].as<std::string>();
+    if (yaml["cost"]) h.cost = yaml["cost"].as<int64_t>();
+    if (yaml["hp"]) h.hp = yaml["hp"].as<int64_t>();
+    if (yaml["damage"]) h.damage = yaml["damage"].as<int64_t>();
+    if (yaml["armor"]) h.armor = yaml["armor"].as<int64_t>();
+    return h;
+}
 
 inline
 bool operator==(const Hero& lhs, const Hero& rhs)

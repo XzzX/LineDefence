@@ -8,3 +8,14 @@ target_compile_options(LineDefence PRIVATE
         -Wuninitialized
         -Wshadow)
 target_link_libraries(LineDefence PRIVATE yaml-cpp)
+
+add_executable(LineDefenceTest
+        Hero.test.cpp)
+target_compile_options(LineDefenceTest PRIVATE
+        -Wall
+        -Wextra
+        -Wunreachable-code
+        -Wuninitialized
+        -Wshadow)
+target_link_libraries(LineDefenceTest PRIVATE yaml-cpp)
+target_link_libraries(LineDefenceTest PRIVATE gtest gtest_main)
