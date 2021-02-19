@@ -1,7 +1,8 @@
 #pragma once
 
+#include "Army.h"
+
 #include <string>
 
-void fight_callback(const std::string& heros_filename,
-                    const std::string& army1_filename,
-                    const std::string& army2_filename);
+void fight_callback(Army& army1,
+                    Army& army2);

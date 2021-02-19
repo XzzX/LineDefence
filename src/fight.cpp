@@ -37,16 +37,8 @@ int fight(Army army1,
     return army1.size() - army2.size();
 }
 
-void fight_callback(const std::string& heros_filename,
-                    const std::string& army1_filename,
-                    const std::string& army2_filename)
+void fight_callback(Army& army1,
+                    Army& army2)
 {
-    auto herolist = create_herolist(heros_filename);
-//    auto army1 = create_army(herolist, army1_filename);
-//    auto army2 = create_army(herolist, army2_filename);
-
-    auto army1 = create_random_army(herolist, 10);
-    auto army2 = create_random_army(herolist, 10);
-
     std::cout << fight(army1, army2) << std::endl;
 }
