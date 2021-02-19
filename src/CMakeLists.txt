@@ -1,6 +1,6 @@
 configure_file(heros.yaml heros.yaml COPYONLY)
 add_executable(LineDefence
-        main.cpp Hero.h)
+        main.cpp Hero.h fight.cpp fight.h Army.cpp Army.h HeroList.cpp HeroList.h)
 target_compile_options(LineDefence PRIVATE
         -Wall
         -Wextra

@@ -1,2 +1,35 @@
-id: Giant
-cost: 100
+- id: HDA
+  costs: 100
+  hp: 30
+  damage: 20
+  armor: 5
+
+- id: HAD
+  costs: 100
+  hp: 30
+  damage: 10
+  armor: 7
+
+- id: DHA
+  costs: 100
+  hp: 20
+  damage: 30
+  armor: 5
+
+- id: DAH
+  costs: 100
+  hp: 10
+  damage: 30
+  armor: 7
+
+- id: AHD
+  costs: 100
+  hp: 20
+  damage: 10
+  armor: 9
+
+- id: ADH
+  costs: 100
+  hp: 10
+  damage: 20
+  armor: 9
