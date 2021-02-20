@@ -1,7 +1,6 @@
 #include "fight.h"
 
-#include "Army.h"
-#include "HeroList.h"
+#include "common/Army.h"
 
 #include <cassert>
 #include <iomanip>

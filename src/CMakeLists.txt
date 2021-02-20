@@ -1,21 +1,22 @@
 configure_file(heros.yaml heros.yaml COPYONLY)
 add_executable(LineDefence
-        main.cpp Hero.h fight.cpp fight.h Army.cpp Army.h HeroList.cpp HeroList.h)
+        main.cpp common/Hero.h fight/fight.cpp fight/fight.h common/Army.cpp common/Army.h common/HeroList.cpp common/HeroList.h)
 target_compile_options(LineDefence PRIVATE
         -Wall
         -Wextra
         -Wunreachable-code
         -Wuninitialized
         -Wshadow)
+target_include_directories(LineDefence PRIVATE .)
 target_link_libraries(LineDefence PRIVATE CLI11 yaml-cpp)
 
 add_executable(LineDefenceTest
-        Hero.test.cpp)
+        common/Hero.test.cpp)
 target_compile_options(LineDefenceTest PRIVATE
         -Wall
         -Wextra
         -Wunreachable-code
         -Wuninitialized
         -Wshadow)
-target_link_libraries(LineDefenceTest PRIVATE yaml-cpp)
-target_link_libraries(LineDefenceTest PRIVATE gtest gtest_main)
+target_include_directories(LineDefenceTest PRIVATE .)
+target_link_libraries(LineDefenceTest PRIVATE yaml-cpp gtest gtest_main)

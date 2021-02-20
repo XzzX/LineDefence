@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Army.h"
+#include "common/Army.h"
 
 #include <string>
 
