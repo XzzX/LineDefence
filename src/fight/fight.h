@@ -4,5 +4,6 @@
 
 #include <string>
 
-void fight_callback(Army& army1,
-                    Army& army2);
+int fight(Army army1,
+          Army army2,
+          bool print_rounds = false);
