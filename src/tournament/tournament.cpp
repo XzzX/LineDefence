@@ -16,6 +16,24 @@ std::vector<std::unique_ptr<Team>> create_random_teams(const HeroList& herolist,
     return teams;
 }
 
+void print_top_x(const std::vector<std::unique_ptr<Team>>& teams,
+                 const size_t num_teams)
+{
+    std::cout << "===================================================" << std::endl;
+    std::cout << "pos |   id  | points | army" << std::endl;
+    std::cout << "---------------------------------------------------" << std::endl;
+    for (size_t pos = 0; pos < num_teams; ++pos)
+    {
+        std::cout << std::setw(3) << pos + 1 << " | "<< std::setw(5) << teams[pos]->id << " | " << std::setw(6) << teams[pos]->points << " | ";
+        for (Hero& hero : teams[pos]->army)
+        {
+            std::cout << hero.id << ", ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << "===================================================" << std::endl;
+}
+
 void tournament(std::vector<std::unique_ptr<Team>>& teams,
                 const int64_t num_rounds)
 {
@@ -91,18 +109,5 @@ void tournament(std::vector<std::unique_ptr<Team>>& teams,
     }
 
     std::cout << "final standings" << std::endl;
-
-    std::cout << "===================================================" << std::endl;
-    std::cout << "pos |   id  | points | army" << std::endl;
-    std::cout << "---------------------------------------------------" << std::endl;
-    for (size_t pos = 0; pos < 16; ++pos)
-    {
-        std::cout << std::setw(3) << pos + 1 << " | "<< std::setw(5) << teams[pos]->id << " | " << std::setw(6) << teams[pos]->points << " | ";
-        for (Hero& hero : teams[pos]->army)
-        {
-            std::cout << hero.id << ", ";
-        }
-        std::cout << std::endl;
-    }
-    std::cout << "===================================================" << std::endl;
+    print_top_x(teams, 10);
 }
