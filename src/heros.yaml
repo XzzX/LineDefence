@@ -1,35 +1,35 @@
 - id: HDA
   costs: 100
   hp: 30
-  damage: 20
-  armor: 5
+  damage: 5
+  armor: 1
 
 - id: HAD
   costs: 100
   hp: 30
-  damage: 10
-  armor: 7
+  damage: 4
+  armor: 2
 
 - id: DHA
   costs: 100
   hp: 20
-  damage: 30
-  armor: 5
+  damage: 6
+  armor: 1
 
 - id: DAH
   costs: 100
   hp: 10
-  damage: 30
-  armor: 7
+  damage: 6
+  armor: 2
 
 - id: AHD
   costs: 100
   hp: 20
-  damage: 10
-  armor: 9
+  damage: 4
+  armor: 3
 
 - id: ADH
   costs: 100
   hp: 10
-  damage: 20
-  armor: 9
+  damage: 5
+  armor: 3
