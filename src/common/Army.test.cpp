@@ -21,9 +21,20 @@ protected:
 
 TEST_F(ArmyTest, create_random_army)
 {
-    auto army1 = create_random_army(heros_, 10);
-    auto army2 = create_random_army(heros_, 10);
+    Army army1 = create_random_army(heros_, 10);
+    Army army2 = create_random_army(heros_, 10);
 
     ASSERT_EQ(army1.size(), 10);
     ASSERT_EQ(army2.size(), 10);
+
+    bool unequal = false;
+    for (int i = 0; i < 10; ++i)
+    {
+        if (army1[i].id != army2[i].id)
+        {
+            unequal = true;
+            break;
+        }
+    }
+    ASSERT_TRUE(unequal);
 }

@@ -1,6 +1,6 @@
 configure_file(heros.yaml heros.yaml COPYONLY)
 add_executable(LineDefence
-        main.cpp common/Hero.h fight/fight.cpp fight/fight.h common/Army.cpp common/Army.h common/HeroList.cpp common/HeroList.h tournament/Team.cpp tournament/Team.h tournament/tournament.cpp tournament/tournament.h)
+        main.cpp common/Hero.h fight/fight.cpp fight/fight.h common/Army.cpp common/Army.h common/HeroList.cpp common/HeroList.h tournament/Team.cpp tournament/Team.h tournament/tournament.cpp tournament/tournament.h evolve/evolve.cpp evolve/evolve.h)
 target_compile_options(LineDefence PRIVATE
         -Wall
         -Wextra

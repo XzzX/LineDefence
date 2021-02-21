@@ -42,17 +42,17 @@ void tournament(std::vector<std::unique_ptr<Team>>& teams,
     constexpr int64_t points_loss = 0l;
 
     const auto num_teams = teams.size();
-    std::cout << "running tournament with " << num_teams << " teams for " << num_rounds << " rounds" << std::endl;
 
     //resetting cache
     for (auto& team : teams)
     {
         team->points = 0;
         team->seated = false;
+        team->previous_opponents.clear();
     }
     for (int64_t round = 0; round < num_rounds; ++round)
     {
-        std::cout << "Round " << round << std::endl;
+//        std::cout << "Round " << round << std::endl;
         //finding pairings
         for (size_t team1 = 0; team1 < num_teams; ++team1)
         {
@@ -88,9 +88,9 @@ void tournament(std::vector<std::unique_ptr<Team>>& teams,
         }
 
         //checking every team was seated
-        std::cout << "not seated: " << std::count_if(teams.begin(),
-                                                     teams.end(),
-                                                     [](const auto& team){return !team->seated;}) << std::endl;
+//        std::cout << "not seated: " << std::count_if(teams.begin(),
+//                                                     teams.end(),
+//                                                     [](const auto& team){return !team->seated;}) << std::endl;
 
         //resetting cache
         for (auto& team : teams)
