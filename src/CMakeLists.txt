@@ -11,6 +11,8 @@ target_include_directories(LineDefence PRIVATE .)
 target_link_libraries(LineDefence PRIVATE CLI11 yaml-cpp)
 
 add_executable(LineDefenceTest
+        common/Army.cpp
+        common/Army.test.cpp
         common/Hero.test.cpp)
 target_compile_options(LineDefenceTest PRIVATE
         -Wall
